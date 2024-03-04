@@ -2,7 +2,7 @@
 //  MovieCell.swift
 //  LearningUIKit
 //
-//  Created by Vincent on 02/03/2024.
+//  Created by Vincent on 04/03/2024.
 //
 
 import UIKit

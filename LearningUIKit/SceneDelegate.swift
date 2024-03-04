@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  LearningUIKit
 //
-//  Created by Vincent on 02/03/2024.
+//  Created by Vincent on 04/03/2024.
 //
 
 import UIKit
@@ -18,19 +18,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.windowScene = windowScene
-
-        let navigationController = UINavigationController()
-        navigationController.navigationBar.prefersLargeTitles = true
-
-        let moviesiewController = UIStoryboard(
+        window = UIWindow(windowScene: windowScene)
+        
+        let moviesViewController = UIStoryboard(
             name: "Main",
             bundle: nil
-        ).instantiateViewController(withIdentifier: "MoviesList")
+        ).instantiateViewController(identifier: "MoviesVC")
         
-        navigationController.viewControllers = [moviesiewController]
-
+        let navigationController = UINavigationController(
+            rootViewController: moviesViewController
+        )
+        navigationController.navigationBar.prefersLargeTitles = true
+        
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
